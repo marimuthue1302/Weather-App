@@ -3,7 +3,15 @@ import Input from "@mui/joy/Input";
 import Button from "@mui/joy/Button";
 import "./Input.css";
 
-const input = () => {
+const input = ({ input, setInput, findWeather }) => {
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
+  const handleClick = (event) => {
+    event.preventDefault();
+    findWeather();
+  };
+
   return (
     <div className="inputBox">
       <div className="inputBox__field">
@@ -14,8 +22,14 @@ const input = () => {
           alt="logo"
         />
         <form>
-          <Input placeholder="Enter the city name" />
-          <Button variant="solid" type="submit">Search</Button>
+          <Input
+            placeholder="Enter the city name"
+            onChange={handleChange}
+            value={input}
+          />
+          <Button variant="solid" type="submit" onClick={handleClick}>
+            Search
+          </Button>
         </form>
       </div>
     </div>
