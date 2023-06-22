@@ -34,7 +34,7 @@ function App() {
       if (error.response && error.response.status === 404) {
         alert("Enter the valid city name");
       } else if (input === "") {
-        alert("Enter the city name");
+        alert("The city name can't be empty!");
       }
     }
   };
