@@ -9,7 +9,7 @@ const input = ({ input, setInput, findWeather }) => {
   };
   const handleClick = (event) => {
     event.preventDefault();
-    if (!input) {
+    if (input==="") {
       alert("Please enter a valid city name");
     } else {
       findWeather();
