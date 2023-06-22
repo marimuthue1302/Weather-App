@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Input from "./components/input";
 import axios from "axios";
+import Result from "./components/Result";
 
 function App() {
   const [input, setInput] = useState("");
@@ -27,10 +28,15 @@ function App() {
     setTemp(temp);
     setDescription(description);
     setIcon(imageURL);
+    setInput("");
   };
   return (
     <div className="app">
-      <Input input={input} setInput={setInput} findWeather={findWeather} />
+      {temp === "" ? (
+        <Input setInput={setInput} findWeather={findWeather} />
+      ) : (
+        <Result input={input} temp={temp} desc={description} icon={icon} setTemp={setTemp} />
+      )}
     </div>
   );
 }

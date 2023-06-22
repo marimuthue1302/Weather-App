@@ -9,30 +9,37 @@ const input = ({ input, setInput, findWeather }) => {
   };
   const handleClick = (event) => {
     event.preventDefault();
-    findWeather();
+    if (!input) {
+      alert("Please enter a valid city name");
+    } else {
+      findWeather();
+    }
   };
 
   return (
-    <div className="inputBox">
-      <div className="inputBox__field">
-        <h1>Google Weather App</h1>
-        <p>Powered By</p>
-        <img
-          src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
-          alt="logo"
-        />
-        <form>
-          <Input
-            placeholder="Enter the city name"
-            onChange={handleChange}
-            value={input}
+    <>
+      <div className="inputBox">
+        <div className="inputBox__field">
+          <h1>Google Weather App</h1>
+          <p>Powered By</p>
+          <img
+            src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
+            alt="logo"
           />
-          <Button variant="solid" type="submit" onClick={handleClick}>
-            Search
-          </Button>
-        </form>
+          <form>
+            <Input
+              placeholder="Enter the city name"
+              onChange={handleChange}
+              value={input}
+              className="text_input"
+            />
+            <Button variant="solid" type="submit" onClick={handleClick}>
+              Search
+            </Button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
