@@ -16,7 +16,7 @@ const input = ({ input, setInput, findWeather }) => {
     <>
       <div className="inputBox">
         <div className="inputBox__field">
-          <h1>Weather App</h1>
+          <h1>Google Weather App</h1>
           <p>Powered By</p>
           <img
             src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"
