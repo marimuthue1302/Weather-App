@@ -8,6 +8,7 @@
 }
 
 .inputBox__field {
+    width: 30%;
     padding: 3%;
     text-align: center;
     background-color: #fff;
@@ -25,9 +26,9 @@
 }
 
 .inputBox__field > img {
-    width: 15%;
-    padding-bottom: 40px;
-    padding-bottom: 20px;
+    width: 25%;
+    padding-bottom: 30px;
+    padding-top: 10px;
 }
 
 .inputBox__field > form > button {
@@ -35,3 +36,4 @@
     background-color: #0a8d48 !important;
     color: #fff;
 }
+

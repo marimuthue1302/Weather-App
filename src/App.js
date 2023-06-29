@@ -6,6 +6,7 @@ import Result from "./components/Result";
 
 function App() {
   const [input, setInput] = useState("");
+  const [city, setCity] = useState("");
   const [temp, setTemp] = useState("");
   const [description, setDescription] = useState("");
   const [icon, setIcon] = useState("");
@@ -41,9 +42,14 @@ function App() {
   return (
     <div className="app">
       {temp === "" ? (
-        <Input setInput={setInput} findWeather={findWeather} />
+        <Input
+          setInput={setInput}
+          setCity={setCity}
+          findWeather={findWeather}
+        />
       ) : (
         <Result
+          city={city}
           input={input}
           temp={temp}
           desc={description}
